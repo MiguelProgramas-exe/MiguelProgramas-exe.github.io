@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste PyScript</title>
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+</head>
+
+<body>
+
+<h1>VOTE EM ALGUEM</h1>
+
+<input id="num" type="number">
+<button py-click="verificar">Vote</button>
+
+<p id="resultado"></p>
+
+<script type="py">
+from pyscript import document
+
+def verificar(event):  
+    try:
+        valor = document.getElementById("num").value
+        
+        if valor == "":
+            document.getElementById("resultado").innerText = "TEM QUE ESCOLHE ALGUEM NAO PODE NULO!"
+            return
+        
+        x = int(valor)
+
+        if x == 13:
+            document.getElementById("resultado").innerText = "Lula!"
+        else:
+            document.getElementById("resultado").innerText = "Not Lula!"
+
+    except:
+        document.getElementById("resultado").innerText = "Erro!"
+</script>
+
+</body>
+</html>
