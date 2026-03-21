@@ -6,6 +6,32 @@
 
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+    <style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* vertical */
+        align-items: center;     /* horizontal */
+        height: 100vh;           /* altura da tela inteira */
+        margin: 0;
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    input, button {
+        padding: 10px;
+        font-size: 16px;
+        margin: 5px;
+    }
+
+    #resultado {
+        margin-top: 15px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+</style>
+
 </head>
 
 <body>
@@ -31,13 +57,11 @@ def verificar(event):
         x = int(valor)
 
         if x == 13:
-            document.getElementById("resultado").innerText = "Lula!"
+            document.getElementById("resultado").innerHTML = '<span style="color: red; font-size: 24px;">Lula!</span>'
+        elif x == 22:
+            document.getElementById("resultado").innerHTML = '<span style="color: green; font-size: 24px;">Bolsonaro!</span>'
         else:
-            document.getElementById("resultado").innerText = "Not Lula!"
+            document.getElementById("resultado").innerText = "Voto inválido!"
 
     except:
         document.getElementById("resultado").innerText = "Erro!"
-</script>
-
-</body>
-</html>

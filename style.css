@@ -1,0 +1,6 @@
+body {
+    display: grid;
+    place-items: center; /* Centraliza horizontal e verticalmente */
+    min-height: 100vh;
+    margin: 0;
+}
